@@ -1,6 +1,7 @@
 package ule.edi.model;
 
 public class Person {
+
 	private String name;
 	private String nif;
 	private int age;
@@ -30,21 +31,29 @@ public class Person {
 	}
 
 	public Person(String nif, String name, int edad) {
-        this.nif=nif;
+		this.nif = nif;
 		this.name = name;
 		this.age = edad;
+
 	}
 
 	@Override
 	public String toString() {
-		return "{ NIF: "+ nif + "  Name : " + name + ", Age:" + age + "}";
+		return "{ NIF: " + nif + "  Name : " + name + ", Age:" + age + "}";
 	}
-	
-    @Override
+
+	@Override
 	public boolean equals(Object obj) {
+
 		// TODO Auto-generated method stub
 		// Dos personas son iguales si son iguales sus nifs
-		return false;	
+		Person persona = (Person) obj;
+
+		if (persona.getNif().equals(this.nif)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
+
 }
